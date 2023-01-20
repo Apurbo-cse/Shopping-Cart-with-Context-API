@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const ProductCard = (props) => {
+  const context = useContext();
+
+  const totalCartCount = context.state.cart.reduce(
+    (total, book) => (total = total + book.count),
+    0
+  );
   return (
     <>
       <div className="col-md-3 mb-3">
