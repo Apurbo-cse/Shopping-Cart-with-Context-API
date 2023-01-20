@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { productApi } from "./components/api/productApi";
 import Navbar from "./components/layouts/include/Navbar";
 import Master from "./components/layouts/Master";
+import Cart from "./components/pages/Cart";
 import Home from "./components/pages/Home";
 
 export const BooksContext = createContext();
@@ -63,6 +64,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Master />}>
           <Route index path="/" element={<Home />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </BooksContext.Provider>

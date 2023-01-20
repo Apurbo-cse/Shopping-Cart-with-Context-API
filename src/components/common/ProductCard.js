@@ -4,8 +4,6 @@ import { productApi } from "../api/productApi";
 const ProductCard = (props) => {
   const context = useContext(BooksContext);
 
- 
-
   return (
     <>
       {productApi.map((book) => (
