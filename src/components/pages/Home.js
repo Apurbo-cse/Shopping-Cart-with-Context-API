@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import ProductCard from "../common/ProductCard";
 
 const Home = () => {
@@ -18,7 +17,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ProductCard />
+
+      <div className="container main-body-width">
+        <div className="row pt-3 d-flex justify-content-between">
+          <div className="row post-main">
+            <ProductCard />
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { BooksContext } from "../../../App";
 
-const Navbar = () => {
+const Navbar = ({ props }) => {
+  const context = useContext(BooksContext);
+
+  const totalCartCount = context.state.cart.reduce(
+    (total, book) => (total = total + book.count),
+    0
+  );
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
@@ -61,9 +69,10 @@ const Navbar = () => {
               <NavLink to="/login" className="btn btn-outline-dark">
                 <i className="fa fa-sign-in me-1" aria-hidden="true"></i> Login
               </NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus me-1" aria-hidden="true"></i>{" "}
-                Register
+
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-user-plus me-1" aria-hidden="true"></i>My
+                Cart({totalCartCount})
               </NavLink>
             </div>
           </div>
